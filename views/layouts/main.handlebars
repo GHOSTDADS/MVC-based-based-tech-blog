@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDs cool tech blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <nav class="navbar is-dark is-spaced has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-start">
+          <a class="button is-black navbar-item mx-1" href="/">Home</a>
+          <a class="button is-black navbar-item mx-1" href="/profile">Dashboard</a>
+        </div>
+        <div class="navbar-end buttons">
+          {{#if logged_in}}
+            <div class="field is-grouped">
+              <a class="button is-warning" id="logout">
+                Logout
+              </a>
+            </div>
+          {{else}}
+            <div class="field is-grouped">
+              <a class="button is-primary" id="login" href="/login">
+                Login
+              </a>
+            </div>
+          {{/if}}
+        </div>
+  </nav>
+
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>  
+  </footer>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+
+</html>
+

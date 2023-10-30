@@ -1,0 +1,21 @@
+{{#each blogs as |blog| }}
+<div class="card mb-4 project" style="background-color: rgba(0, 0, 0, 0.2)">
+  <header class="card-header">
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <a href="/project/{{blog.id}}">{{{get_emoji}}}</a>
+      </span>
+    </button>
+    <h2 class="media-content py-2">
+      <p class="title is-4" ><a href="/blog/{{blog.id}}">{{blog.title}}</a></p>
+      <p class="subtitle is-7">Created by {{blog.user.name}} on {{ format_date blog.date_created}}</p>
+    </h2>
+  </header>
+
+  <div class="card-content has-text-centered">
+    <p class="content is-medium">
+      {{blog.content}}
+    </p>
+  </div>
+</div>
+{{/each}}
